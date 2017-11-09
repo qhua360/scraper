@@ -1,3 +1,4 @@
+# Python 3
 # Naive approach exercise
 import time
 
@@ -6,7 +7,9 @@ from selenium.webdriver.common.keys import Keys
 
 browser = webdriver.Chrome()
 base_url = u'https://twitter.com/search?q='
-query = u'$40@mapleleafs'
+query = input("Enter search term:\n")
+if '#' == query[0]:
+    query = u'%23' + query[1:]
 url = base_url + query
 
 browser.get(url)
